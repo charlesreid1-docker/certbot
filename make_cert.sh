@@ -13,6 +13,9 @@ fi
 
 DOM="charlesreid1.blue"
 
+# Remove --staging
+# to make this happen for real
+
 certbot certonly \
     --staging \
     --standalone \
@@ -21,4 +24,5 @@ certbot certonly \
     --email charles@charlesreid1.com \
     -d ${DOM} \
     -d www.${DOM} \
-    -d git.${DOM} 
+    -d git.${DOM}
+
