@@ -11,18 +11,77 @@ if [ "$(id -u)" != "0" ]; then
     exit 1;
 fi
 
+# add the --staging flag to make this a fake dry run
+
+# -----
+
+DOM="charlesreid1.red"
+
+## success!
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d ${DOM}
+
+## success!
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d git.${DOM}
+
+## FAIL - fix when domain name records are fixed
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d www.${DOM}
+
+## TODO
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d pages.${DOM}
+
+# -----
+
 DOM="charlesreid1.blue"
 
-# Remove --staging
-# to make this happen for real
+## success!
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d ${DOM}
 
-certbot certonly \
-    --staging \
-    --standalone \
-    --non-interactive \
-    --agree-tos \
-    --email charles@charlesreid1.com \
-    -d ${DOM} \
-    -d www.${DOM} \
-    -d git.${DOM}
+## success!
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d git.${DOM}
+
+## success!
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d www.${DOM}
+
+## TODO
+#certbot certonly \
+#    --standalone \
+#    --non-interactive \
+#    --agree-tos \
+#    --email charles@charlesreid1.com \
+#    -d pages.${DOM}
 
