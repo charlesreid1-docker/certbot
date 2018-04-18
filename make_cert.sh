@@ -1,6 +1,4 @@
 #!/bin/bash
-#
-# Just a script to make an SSL cert "manually"
 
 if [ "$(id -u)" != "0" ]; then
     echo ""
@@ -11,77 +9,21 @@ if [ "$(id -u)" != "0" ]; then
     exit 1;
 fi
 
-# add the --staging flag to make this a fake dry run
+set -x
 
-# -----
+DOMS="charlesreid1.red charlesreid1.blue charlesreid1.com"
+#SUBS="www git pages files"
+SUBS="hooks bots"
 
-DOM="charlesreid1.red"
+for SUB in $SUBS; do
+    for DOM in $DOMS; do
+        echo certbot certonly \
+            --standalone \
+            --non-interactive \
+            --agree-tos \
+            --email charles@charlesreid1.com \
+            -d ${SUB}.${DOM}
+    done
+done
 
-## success!
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d ${DOM}
-
-## success!
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d git.${DOM}
-
-## FAIL - fix when domain name records are fixed
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d www.${DOM}
-
-## TODO
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d pages.${DOM}
-
-# -----
-
-DOM="charlesreid1.blue"
-
-## success!
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d ${DOM}
-
-## success!
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d git.${DOM}
-
-## success!
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d www.${DOM}
-
-## TODO
-#certbot certonly \
-#    --standalone \
-#    --non-interactive \
-#    --agree-tos \
-#    --email charles@charlesreid1.com \
-#    -d pages.${DOM}
-
+set +x
