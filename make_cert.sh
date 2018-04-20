@@ -13,7 +13,8 @@ set -x
 
 DOMS="charlesreid1.red charlesreid1.blue charlesreid1.com"
 #SUBS="www git pages files"
-SUBS="hooks bots"
+#SUBS="hooks bots"
+SUBS="api"
 
 for SUB in $SUBS; do
     for DOM in $DOMS; do
