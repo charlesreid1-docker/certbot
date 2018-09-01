@@ -29,14 +29,13 @@ for DOM in $DOMS; do
     #    --email charles@charlesreid1.com \
     #    -d ${DOM}
 
-    ## Real:
-    #certbot certonly \
-    #    --standalone \
-    #    --non-interactive \
-    #    --agree-tos \
-    #    --email charles@charlesreid1.com \
-    #    -d ${DOM}
-    echo "ohai" 
+    # Real:
+    certbot certonly \
+        --standalone \
+        --non-interactive \
+        --agree-tos \
+        --email charles@charlesreid1.com \
+        -d ${DOM}
 
 done
 
