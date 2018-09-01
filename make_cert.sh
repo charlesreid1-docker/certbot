@@ -11,20 +11,65 @@ fi
 
 set -x
 
-DOMS="charlesreid1.red charlesreid1.blue charlesreid1.com"
-#SUBS="www git pages files"
-#SUBS="hooks bots"
-SUBS="api"
 
+
+##############
+# Domains
+##############
+
+#DOMS="charlesreid1.red charlesreid1.blue charlesreid1.com"
+#
+#for DOM in $DOMS; do
+#
+#    ## Fake:
+#    #echo certbot certonly \
+#    #    --standalone \
+#    #    --non-interactive \
+#    #    --agree-tos \
+#    #    --email charles@charlesreid1.com \
+#    #    -d ${SUB}.${DOM}
+#
+#    # Real:
+#    certbot certonly \
+#        --standalone \
+#        --non-interactive \
+#        --agree-tos \
+#        --email charles@charlesreid1.com \
+#        -d ${DOM}
+#
+#done
+
+
+
+##############
+# Subdomains
+##############
+
+DOMS="charlesreid1.com"
+SUBS="files git pages www"
+
+# Subdomains
 for SUB in $SUBS; do
     for DOM in $DOMS; do
-        echo certbot certonly \
+
+        ## Fake:
+        #echo certbot certonly \
+        #    --standalone \
+        #    --non-interactive \
+        #    --agree-tos \
+        #    --email charles@charlesreid1.com \
+        #    -d ${SUB}.${DOM}
+
+        # Real:
+        certbot certonly \
             --standalone \
             --non-interactive \
             --agree-tos \
             --email charles@charlesreid1.com \
             -d ${SUB}.${DOM}
+
     done
 done
 
 set +x
+
