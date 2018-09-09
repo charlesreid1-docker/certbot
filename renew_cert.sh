@@ -45,7 +45,7 @@ done
 # Subdomains
 ##############
 
-DOMS="charlesreid1.com"
+DOMS="charlesreid1.com charlesreid1.blue charlesreid1.red"
 SUBS="git files pages hooks bots www"
 
 # Subdomains
