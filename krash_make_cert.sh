@@ -2,6 +2,15 @@
 #
 # renew/run certbot on krash
 
+if [ "$(id -u)" != "0" ]; then
+    echo ""
+    echo ""
+    echo "This script should be run as root."
+    echo ""
+    echo ""
+    exit 1;
+fi
+
 set +x 
 
 # disable system service that will re-spawn docker pod
