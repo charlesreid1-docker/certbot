@@ -27,7 +27,7 @@ set -x
 #    #    --non-interactive \
 #    #    --agree-tos \
 #    #    --email charles@charlesreid1.com \
-#    #    -d ${SUB}.${DOM}
+#    #    -d ${DOM}
 #
 #    # Real:
 #    certbot certonly \
