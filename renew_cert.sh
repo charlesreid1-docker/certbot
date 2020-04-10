@@ -25,9 +25,10 @@ DOMS="charlesreid1.com"
 for DOM in $DOMS; do
 
     ## Fake:
-    #echo certbot renew \
+    #certbot certonly \
     #    --standalone \
     #    --non-interactive \
+    #    --dry-run \
     #    --agree-tos \
     #    --email charles@charlesreid1.com \
     #    -d ${DOM}
@@ -51,15 +52,14 @@ done
 #DOMS="charlesreid1.com" # charlesreid1.blue charlesreid1.red"
 #DOMS="charlesreid1.red"
 DOMS="charlesreid1.com"
-SUBS="git files pages hooks bots www"
-#SUBS="files pages hooks bots www"
+SUBS="git www"
 
 # Subdomains
 for SUB in $SUBS; do
     for DOM in $DOMS; do
 
         ## Fake:
-        #certbot renew \
+        #certbot certonly \
         #    --standalone \
         #    --non-interactive \
         #    --dry-run \

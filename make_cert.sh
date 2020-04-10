@@ -46,7 +46,7 @@ set -x
 ##############
 
 DOMS="charlesreid1.com"
-SUBS="files git pages www"
+SUBS="git www"
 
 # Subdomains
 for SUB in $SUBS; do
