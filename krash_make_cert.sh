@@ -29,5 +29,6 @@ docker-compose -f $HOME/codes/docker/pod-charlesreid1/docker-compose.yml up -d
 
 echo "Enable system service:"
 sudo systemctl enable dockerpod-charlesreid1
+sudo systemctl start dockerpod-charlesreid1
 
 set -x
