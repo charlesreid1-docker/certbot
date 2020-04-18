@@ -22,7 +22,7 @@ echo "Stop pod:"
 docker-compose -f /home/charles/codes/docker/pod-charlesreid1/docker-compose.yml down
 
 echo "Run certbot renew:"
-sudo ./renew_cert.sh
+sudo /home/charles/codes/certbot/renew_cert.sh
 
 echo "Start pod:"
 docker-compose -f /home/charles/codes/docker/pod-charlesreid1/docker-compose.yml up -d
