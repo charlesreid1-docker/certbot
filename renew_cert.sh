@@ -17,7 +17,7 @@ set -x
 # Domains
 ##############
 
-#DOMS="charlesreid1.red charlesreid1.blue charlesreid1.com"
+#DOMS="charlesreid1.com charlesreid1.blue charlesreid1.red"
 #DOMS="charlesreid1.red"
 #DOMS="charlesreid1.blue"
 DOMS="charlesreid1.com"
@@ -49,8 +49,9 @@ done
 # Subdomains
 ##############
 
-#DOMS="charlesreid1.com" # charlesreid1.blue charlesreid1.red"
+#DOMS="charlesreid1.com charlesreid1.blue charlesreid1.red"
 #DOMS="charlesreid1.red"
+#DOMS="charlesreid1.blue"
 DOMS="charlesreid1.com"
 SUBS="git www"
 

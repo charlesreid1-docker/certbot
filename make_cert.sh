@@ -18,26 +18,29 @@ set -x
 ##############
 
 #DOMS="charlesreid1.red charlesreid1.blue charlesreid1.com"
-#
-#for DOM in $DOMS; do
-#
-#    ## Fake:
-#    #echo certbot certonly \
-#    #    --standalone \
-#    #    --non-interactive \
-#    #    --agree-tos \
-#    #    --email charles@charlesreid1.com \
-#    #    -d ${DOM}
-#
-#    # Real:
-#    certbot certonly \
-#        --standalone \
-#        --non-interactive \
-#        --agree-tos \
-#        --email charles@charlesreid1.com \
-#        -d ${DOM}
-#
-#done
+#DOMS="charlesreid1.red"
+#DOMS="charlesreid1.blue"
+DOMS="charlesreid1.com"
+
+for DOM in $DOMS; do
+
+    ## Fake:
+    #echo certbot certonly \
+    #    --standalone \
+    #    --non-interactive \
+    #    --agree-tos \
+    #    --email charles@charlesreid1.com \
+    #    -d ${DOM}
+
+    # Real:
+    certbot certonly \
+        --standalone \
+        --non-interactive \
+        --agree-tos \
+        --email charles@charlesreid1.com \
+        -d ${DOM}
+
+done
 
 
 
@@ -45,6 +48,8 @@ set -x
 # Subdomains
 ##############
 
+#DOMS="charlesreid1.com charlesreid1.blue charlesreid1.red"
+#DOMS="charlesreid1.red"
 DOMS="charlesreid1.com"
 SUBS="git www"
 
