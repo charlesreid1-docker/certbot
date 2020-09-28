@@ -9,8 +9,6 @@ if [ "$(id -u)" != "0" ]; then
     exit 1;
 fi
 
-set -x
-
 
 
 ##############
@@ -33,12 +31,14 @@ for DOM in $DOMS; do
     #    -d ${DOM}
 
     # Real:
+    set -x
     certbot certonly \
         --standalone \
         --non-interactive \
         --agree-tos \
         --email charles@charlesreid1.com \
         -d ${DOM}
+    set +x
 
 done
 
@@ -66,15 +66,14 @@ for SUB in $SUBS; do
         #    -d ${SUB}.${DOM}
 
         # Real:
+        set -x
         certbot certonly \
             --standalone \
             --non-interactive \
             --agree-tos \
             --email charles@charlesreid1.com \
             -d ${SUB}.${DOM}
+        set +x
 
     done
 done
-
-set +x
-
